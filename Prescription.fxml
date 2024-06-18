@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="476.0" prefWidth="686.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17.0.11" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PrescriptionController">
+   <children>
+      <AnchorPane prefHeight="485.0" prefWidth="686.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="524.0" fitWidth="732.0" layoutX="-46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Desktop/DB_images/Background1.jpg" />
+               </image>
+            </ImageView>
+            <TableView fx:id="PrescriptionTable" layoutX="63.0" layoutY="99.0" prefHeight="142.0" prefWidth="539.0">
+              <columns>
+                <TableColumn fx:id="PrescriptionIDColumn" prefWidth="97.0" text="Prescription ID" />
+                <TableColumn fx:id="DateColumn" prefWidth="88.0" text="Date" />
+                  <TableColumn fx:id="DosageColumn" prefWidth="110.0" text="Dosage" />
+                  <TableColumn fx:id="InstructionsColumn" prefWidth="91.0" text="Instructions" />
+                  <TableColumn fx:id="DoctorIDColumn" prefWidth="75.0" text="Doctor ID" />
+                  <TableColumn fx:id="CustomerIDColumn" prefWidth="77.0" text="Customer ID" />
+              </columns>
+            </TableView>
+            <TextField fx:id="PrescriptionIDTF" layoutX="153.0" layoutY="300.0" promptText="Prescription ID" />
+            <TextField fx:id="DosageTF" layoutX="153.0" layoutY="362.0" promptText="Dosage" />
+            <TextField fx:id="DoctorIDTF" layoutX="440.0" layoutY="332.0" promptText="Doctor ID" />
+            <TextField fx:id="CustomerIDTF" layoutX="440.0" layoutY="362.0" promptText="Customer ID" />
+            <TextField fx:id="Search" layoutX="66.0" layoutY="67.0" promptText="Search" />
+            <Separator layoutX="50.0" layoutY="281.0" prefHeight="7.0" prefWidth="611.0" />
+            <TextField fx:id="InstructionsTF" layoutX="440.0" layoutY="301.0" promptText="Instructions" />
+            <Button fx:id="Refresh" layoutX="560.0" layoutY="22.0" mnemonicParsing="false" onAction="#Refresh" style="-fx-background-color: #2196F3; -fx-background-radius: 10; -fx-border-radius: 10;" text="Refresh">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Desktop/DB_images/refresh.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="AddPrescription" layoutX="222.0" layoutY="443.0" mnemonicParsing="false" onAction="#AddPrescription" style="&#10;                  -fx-background-color: #2196F3;&#10;               " text="Add">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Desktop/DB_images/add1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="UpdatePrescription" layoutX="298.0" layoutY="443.0" mnemonicParsing="false" onAction="#UpdatePrescription" style="-fx-background-color: #2196F3;" text="Update">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Desktop/DB_images/Update1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="DeletePrescription" layoutX="399.0" layoutY="443.0" mnemonicParsing="false" onAction="#DeletePrescription" style="-fx-background-color: #2196F3;" text="Delete">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Desktop/DB_images/Delete1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="SelectPrescription" layoutX="63.0" layoutY="248.0" mnemonicParsing="false" onAction="#SelectPrescription" style="&#10;                  -fx-background-color: #4CAF50;&#10;               " text="Select Prescription">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+            </Button>
+            <Label layoutX="49.0" layoutY="305.0" text="Prescription ID">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="337.0" text="Date">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="71.0" layoutY="367.0" text="Dosage">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="352.0" layoutY="367.0" text="Customer ID">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="361.0" layoutY="337.0" text="Doctor ID">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="355.0" layoutY="305.0" text="Instructions">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="22.0" text="Prescription Management">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="DARKBLUE" />
+               </textFill>
+            </Label>
+            <Button fx:id="UpdateSelected" layoutX="193.0" layoutY="401.0" mnemonicParsing="false" onAction="#UpdateSelected" style="-fx-background-color: #00008b;" text="Update Selected">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Desktop/DB_images/Update1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="DeleteSelected" layoutX="355.0" layoutY="401.0" mnemonicParsing="false" style="-fx-border-radius: 60; -fx-background-color: #00008b;" text="Delete Selected" onAction="#DeleteSelected">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Desktop/DB_images/Delete1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <DatePicker fx:id="DateTF" layoutX="153.0" layoutY="332.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
+            <Button fx:id="SearchB" layoutX="225.0" layoutY="67.0" mnemonicParsing="false" onAction="#SearchB" style="&#10;                  -fx-background-color: #4CAF50;&#10;               " text="Search">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <textFill>
+                  <Color fx:constant="WHITE" />
+               </textFill>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
